@@ -1,26 +1,52 @@
-//fetching the elements 
-//classes are better than ids becuase you dont have to write repeated code
+
+let currentIndex=1;
+
 function addTodo(){
     const inputEl=document.querySelector("input");
-    const valuee=inputEl.value;
+    const inputElval=inputEl.value;
 
-    //inserting an element
-    let ctr=1;
-    const newEl=document.createElement("div");
-    newEl.setAttribute("id",ctr);
-    newEl.innerHTML=`<div>valuee</div><button onclick="deletetodo(${ctr})">Delete</button>`;
-    ctr=ctr+1;
-    document.querySelector("body").appendChild(newEl);
+    if(inputElval.trim()===" "){
+        alert("Please enter a to do item");
+        return;
+    }
+
+    const parentEl=document.getElementById("todos");
+
+    const newtodo=document.createElement("span");
+    newtodo.setAttribute("id", + currentIndex);
+
+    //text
+    const newheading= document.createElement("h4");
+    newheading.textContent= inputElval;
+
+    //button
+    const newButton=document.createElement("button");
+    newButton.textContent="Delete";
+    newButton.setAttribute("onclick","deleteTodo(" +currentIndex+ ")")
+
+    newtodo.appendChild(newheading);
+    newtodo.appendChild(newButton);
+
+    parentEl.appendChild(newtodo);
+
+    //document.querySelector("body").appendChild(parentEl);
+
+    currentIndex++;
+
+    inputEl.value='';
+
 
 
 }
 
-//deleting an element
-function deletetodo(index){
-    const element=document.getElementById(index)
-    element.parentNode.removeChild(element)
-
+function deleteTodo(index){
+    const ele=document.getElementById(index);
+        if(ele){
+            ele.parentNode.removeChild(ele);
+        }
+    
 }
+
 
 
 

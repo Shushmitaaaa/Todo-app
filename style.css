@@ -1,11 +1,118 @@
-#todo1{
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
-#todo2{
-    display: flex;
+body {
+  background: linear-gradient(135deg, #153677, #4e085f);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
 }
 
-#todo3{
-    display: flex;
+
+#app {
+  width: 100%;
+  max-width: 540px;
+  background: #fff;
+  margin: 20px auto;
+  padding: 40px 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+#app h1 {
+  color: #002765;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.input-container button {
+  border: none;
+  outline: none;
+  padding: 14px 30px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.input-container button:hover {
+  background: #c23b2c;
+}
+
+
+#todos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#todos span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  color: #333;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+#todos span:hover {
+  transform: translateY(-3px);
+}
+
+#todos h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+#todos button {
+  background: #ff4757;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#todos button:hover {
+  background: #c23b2c;
 }
